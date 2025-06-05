@@ -14,12 +14,12 @@ export class WebhookController {
     const publicKey = this.configService.get('PUBLIC_KEY');
     const privateKey = this.configService.get('PRIVATE_KEY');
 
-    if (
-      headers['x-public-key'] !== publicKey ||
-      headers['x-private-key'] !== privateKey
-    ) {
-      throw new UnauthorizedException('Invalid keys');
-    }
+    // if (
+    //   headers['x-public-key'] !== publicKey ||
+    //   headers['x-private-key'] !== privateKey
+    // ) {
+    //   throw new UnauthorizedException('Invalid keys');
+    // }
 
     return this.webhookService.saveWebhook({ headers, body });
   }
